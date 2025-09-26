@@ -5,6 +5,64 @@ const fs = require("fs");
 const url = require("url");
 const path = require("path");
 
+const JSON_URL = "https://drive.google.com/uc?export=download&id=1gjHGITcq7RwDgUVNbmFQf6smo5MgOILQ";
+let pesticideList = [];
+
+function downloadJSON(callback) {
+  console.log("📥 Downloading pesticides.json...");
+  https.get(JSON_URL, res => {
+    let data = "";
+    res.on("data", chunk => { data += chunk; });
+    res.on("end", () => {
+      try {
+        fs.writeFileSync("pesticides.json", data, "utf8");
+        pesticideList = JSON.parse(data);
+        console.log("✅ pesticides.json loaded. Count:", pesticideList.length);
+        callback();
+      } catch (err) {
+        console.error("❌ Failed to load pesticides.json:", err);
+      }
+    });
+  }).on("error", err => {
+    console.error("❌ Download error:", err);
+  });
+}
+
+// ダウンロードが完了してからサーバー起動
+downloadJSON(() => {
+  const http = require("http");
+  const url = require("url");
+
+  const server = http.createServer((req, res) => {
+    const parsedUrl = url.parse(req.url, true);
+    const pathname = parsedUrl.pathname;
+
+    if (pathname === "/search") {
+      const keyword = (parsedUrl.query.keyword || "").toLowerCase();
+      const matched = pesticideList.filter(entry =>
+        String(entry["農薬の名称_x"]).toLowerCase().includes(keyword)
+      );
+      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify(matched));
+      return;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // --- データ読み込み ---
 let pesticideList, pesticideData;
 try {

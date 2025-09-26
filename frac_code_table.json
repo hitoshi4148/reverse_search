@@ -1,0 +1,970 @@
+[
+  {
+    "rac_type":"FRAC",
+    "rac_code":4,
+    "group_name":"PA殺菌剤（フェニルアミド）",
+    "made_of_action":"Ａ：核酸合成代謝 - PA殺菌剤（フェニルアミド）",
+    "examples":"メタラキシル",
+    "remarks":"高\/複数の耐性卵菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":4,
+    "group_name":"PA殺菌剤（フェニルアミド）",
+    "made_of_action":"Ａ：核酸合成代謝 - PA殺菌剤（フェニルアミド）",
+    "examples":"メタラキシルM",
+    "remarks":"高\/複数の耐性卵菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":32,
+    "group_name":"芳香族ヘテロ環",
+    "made_of_action":"Ａ：核酸合成代謝 - DNA\/RNA 生合成 (提案中)",
+    "examples":"ヒドロキシイソキサゾール",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":31,
+    "group_name":"カルボン酸",
+    "made_of_action":"Ａ：核酸合成代謝 - DNAトポイソメラーゼ タイプ II (ジャイレース)",
+    "examples":"オキソリニック酸",
+    "remarks":"不明\/耐性菌発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":52,
+    "group_name":"DHODHI殺菌剤",
+    "made_of_action":"Ａ：核酸合成代謝 - フェニルプロパノール",
+    "examples":"イプフルフェノキン",
+    "remarks":"中～高"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":52,
+    "group_name":"DHODHI殺菌剤",
+    "made_of_action":"Ａ：核酸合成代謝 - デノボピリミジン生合成におけるジヒドロオロト酸デヒドロゲナーゼ阻害",
+    "examples":"キノフメリン",
+    "remarks":"中～高"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":1,
+    "group_name":"MBC殺菌剤(メチルベンゾイミダゾールカーバメート)",
+    "made_of_action":"Ｂ：細胞骨格とモータータンパク質 - チューブリン重合",
+    "examples":"ベンレート",
+    "remarks":"高\/広範囲の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。N-ﾌｪﾆﾙｶｰﾊﾞﾒｰﾄと負相関交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":1,
+    "group_name":"MBC殺菌剤(メチルベンゾイミダゾールカーバメート)",
+    "made_of_action":"Ｂ：細胞骨格とモータータンパク質 - チューブリン重合",
+    "examples":"トップジンM",
+    "remarks":"高\/広範囲の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。N-ﾌｪﾆﾙｶｰﾊﾞﾒｰﾄと負相関交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":10,
+    "group_name":"N-フェニルカーバメート",
+    "made_of_action":"Ｂ：細胞骨格とモータータンパク質 - チューブリン重合",
+    "examples":"ジエトフェンカルブ",
+    "remarks":"高\/耐性菌発生。MBC殺菌剤と負相関交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":22,
+    "group_name":"チアゾールカルボキサミド",
+    "made_of_action":"Ｂ：細胞骨格とモータータンパク質 - チューブリン重合",
+    "examples":"エタボキサム",
+    "remarks":"低～中"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":20,
+    "group_name":"フェニルウレア",
+    "made_of_action":"Ｂ：細胞骨格とモータータンパク質 - 細胞分裂(作用点不明)",
+    "examples":"ペンシクロン",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":43,
+    "group_name":"ベンズアミド",
+    "made_of_action":"Ｂ：細胞骨格とモータータンパク質 - スペクトリン様タンパク質の非局在化",
+    "examples":"フルオピコリド",
+    "remarks":"中\/欧州においてﾌﾞﾄﾞｳべと病の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":50,
+    "group_name":"アリルフェニルケトン",
+    "made_of_action":"Ｂ：細胞骨格とモータータンパク質 - アクチン\/ミオシン\/フィンブリン機能",
+    "examples":"ピリオフェノン",
+    "remarks":"中\/耐性うどんこ病菌発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":53,
+    "group_name":"ピリダジン類",
+    "made_of_action":"Ｂ：細胞骨格とモータータンパク質 - チューブリン ダイナミクスモジュレーター",
+    "examples":"ピリダクロメチル",
+    "remarks":"高"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":39,
+    "group_name":"ピリミジンアミン",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"ジフルメトリム",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":39,
+    "group_name":"ピラゾールカルボキサミド",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"トルフェンピラド",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"フルトラニル",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"メプロニル",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"イソフェタミド",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"フルオピラム",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"チフルザミド",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"フルキサピロキサド",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"フラメトピル",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"インピルフルキサム",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"イソピラザム",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"ペンフルフェン",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"ペンチオピラド",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"セダキサン",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"ピジフルメトフェン",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"ボスカリド",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":7,
+    "group_name":"SDHI殺菌剤(コハク酸脱水素酵素阻害剤）",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIコハク酸脱水素酵素",
+    "examples":"ピラジフルミド",
+    "remarks":"中～高\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":11,
+    "group_name":"QoI殺菌剤(Qo阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノール酸化酵素 Qo部位",
+    "examples":"アゾキシストロビン",
+    "remarks":"高\/複数の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":11,
+    "group_name":"QoI殺菌剤(Qo阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノール酸化酵素 Qo部位",
+    "examples":"ピコキシストロビン",
+    "remarks":"高\/複数の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":11,
+    "group_name":"QoI殺菌剤(Qo阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノール酸化酵素 Qo部位",
+    "examples":"マンデストロビン",
+    "remarks":"高\/複数の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":11,
+    "group_name":"QoI殺菌剤(Qo阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノール酸化酵素 Qo部位",
+    "examples":"ピラクロストロビン",
+    "remarks":"高\/複数の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":11,
+    "group_name":"QoI殺菌剤(Qo阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノール酸化酵素 Qo部位",
+    "examples":"クレソキシムメチル",
+    "remarks":"高\/複数の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":11,
+    "group_name":"QoI殺菌剤(Qo阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノール酸化酵素 Qo部位",
+    "examples":"トリフロキシストロビン",
+    "remarks":"高\/複数の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":11,
+    "group_name":"QoI殺菌剤(Qo阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノール酸化酵素 Qo部位",
+    "examples":"メトミノストロビン",
+    "remarks":"高\/複数の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":11,
+    "group_name":"QoI殺菌剤(Qo阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノール酸化酵素 Qo部位",
+    "examples":"ファモキサドン",
+    "remarks":"高\/複数の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":11,
+    "group_name":"QoI殺菌剤(Qo阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノール酸化酵素 Qo部位",
+    "examples":"フルオキサストロビン",
+    "remarks":"高\/複数の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":11,
+    "group_name":"QoI殺菌剤(Qo阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノール酸化酵素 Qo部位",
+    "examples":"ピリベンカルブ",
+    "remarks":"高\/複数の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"11A",
+    "group_name":"QoI殺菌剤(Qo阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノール酸化酵素 Qo部位",
+    "examples":"メチルテトラプロール",
+    "remarks":"高\/耐性菌未発生。ｺｰﾄﾞ11のG143A突然変異株とは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":21,
+    "group_name":"QiI殺菌剤 (Ｑｉ阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノン還元酵素 Qi 部位",
+    "examples":"シアゾファミド",
+    "remarks":"不明であるが中～高と推測。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":21,
+    "group_name":"QiI殺菌剤 (Ｑｉ阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体IIIユビキノン還元酵素 Qi 部位",
+    "examples":"アミスルブロム",
+    "remarks":"不明であるが中～高と推測。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":29,
+    "group_name":null,
+    "made_of_action":"Ｃ：呼吸 - 酸化的リン酸化の脱共役",
+    "examples":"フルアジナム",
+    "remarks":"低\/耐性灰色かび病菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":45,
+    "group_name":"QioSI殺菌剤(Qi, Qo阻害剤)",
+    "made_of_action":"Ｃ：呼吸 - 複合体Ⅲユビキノン還元酵素（Qi, Qo部位、スチグマテリン結合様式）",
+    "examples":"アメトクトラジン",
+    "remarks":"QoIとは交差しない。耐性ﾘｽｸは中～高と推測。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":9,
+    "group_name":"AP殺菌剤 (アニリノピリミジン)",
+    "made_of_action":"Ｄ：アミノ酸およびタンパク質生合成 - メチオニン生合成 (提案中)",
+    "examples":"シプロジニル",
+    "remarks":"中\/耐性灰色かび病菌と黒星病菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":9,
+    "group_name":"AP殺菌剤 (アニリノピリミジン)",
+    "made_of_action":"Ｄ：アミノ酸およびタンパク質生合成 - メチオニン生合成 (提案中)",
+    "examples":"メパニピリム",
+    "remarks":"中\/耐性灰色かび病菌と黒星病菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":24,
+    "group_name":"へキソピラノシル抗生物質",
+    "made_of_action":"Ｄ：アミノ酸およびタンパク質生合成 - タンパク質生合成（リボソーム　翻訳開始段階）",
+    "examples":"カスガマイシン",
+    "remarks":"中\/耐性糸状菌、細菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":25,
+    "group_name":"グルコピラノシル抗生物質",
+    "made_of_action":"Ｄ：アミノ酸およびタンパク質生合成 - タンパク質生合成（リボソーム　翻訳開始段階）",
+    "examples":"ストレプトマイシン",
+    "remarks":"高\/細菌病防除剤。耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":41,
+    "group_name":"テトラサイクリン抗生物質",
+    "made_of_action":"Ｄ：アミノ酸およびタンパク質生合成 - タンパク質生合成（リボソーム　ポリペプチド伸長段階）",
+    "examples":"オキシテトラサイクリン高\/細菌病防除剤。耐性菌が発生。",
+    "remarks":null
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":12,
+    "group_name":"PP殺菌剤(フェニルピロール)",
+    "made_of_action":"Ｅ：シグナル伝達 - 浸透圧シグナル伝達におけるMAP・ヒスチジンキナーゼ(os-2, HOG1)",
+    "examples":"フルジオキソニル",
+    "remarks":"低～中"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":2,
+    "group_name":"ジカルボキシイミド",
+    "made_of_action":"Ｅ：シグナル伝達 - 浸透圧シグナル伝達におけるMAP・ヒスチジンキナーゼ(os-1, Daf1)",
+    "examples":"イプロジオン",
+    "remarks":"中～高"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":2,
+    "group_name":"ジカルボキシイミド",
+    "made_of_action":"Ｅ：シグナル伝達 - 浸透圧シグナル伝達におけるMAP・ヒスチジンキナーゼ(os-1, Daf1)",
+    "examples":"プロシミドン",
+    "remarks":"中～高"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":6,
+    "group_name":"ジチオラン",
+    "made_of_action":"Ｆ：脂質生合成または輸送\/細胞膜の構造または機能 - リン脂質生合成、メチルトランスフェラーゼジ",
+    "examples":"イソプロチオラン",
+    "remarks":"低～中\/ｸﾞﾙｰﾌﾟ内で交差耐性あり。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":14,
+    "group_name":"AH殺菌剤(芳香族炭化水素）",
+    "made_of_action":"Ｆ：脂質生合成または輸送\/細胞膜の構造または機能 - 細胞脂質の過酸化(提案中)",
+    "examples":"トルクロホスメチル",
+    "remarks":"低～中\/複数の耐性菌が発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":28,
+    "group_name":"カーバメート",
+    "made_of_action":"Ｆ：脂質生合成または輸送\/細胞膜の構造または機能 - 細胞膜透過性、脂肪酸(提案中)",
+    "examples":"プロパモカルブ塩酸塩",
+    "remarks":"低～中"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":49,
+    "group_name":"OSBPI　オキシステロール結合タンパク質阻害",
+    "made_of_action":"Ｆ：脂質生合成または輸送\/細胞膜の構造または機能 - 脂質恒常性および輸送\/貯蔵",
+    "examples":"オキサチアピプロリン",
+    "remarks":"分中～高と推測。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"トリホリン",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"フェナリモル",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"オキスポコナゾールフマル酸塩",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"ペフラゾエート",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"プロクロラズ",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"トリフルミゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"シプロコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"ジフェノコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"フェンブコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"ヘキサコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"イミベンコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"イプコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"メトコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"ミクロブタニル",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"プロピコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"シメコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"テブコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"テトラコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"トリチコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"メフェントリフルコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":3,
+    "group_name":"DMI殺菌剤(脱メチル化阻害剤) (SBI: クラス I)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"プロチオコナゾール",
+    "remarks":"中\/ｸﾞﾙｰﾌﾟ内で耐性差が大きい。複数の病原菌において耐性が発生している。DMI間で交差耐性が発生しているとみなしたほうがよい。DMIと他のSBIは交差しない。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":17,
+    "group_name":"KRI殺菌剤(ケト還元阻害剤) (SBI: クラスIII)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"フェンヘキサミド",
+    "remarks":"低～中"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":17,
+    "group_name":"KRI殺菌剤(ケト還元阻害剤) (SBI: クラスIII)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"フェンピラザミン",
+    "remarks":"低～中"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":18,
+    "group_name":"(SBI クラス IV)",
+    "made_of_action":"Ｇ：細胞膜のステロール生合成 - ステロール生合成におけるC14位の脱メチル化酵素",
+    "examples":"ピリブチカルブ",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":19,
+    "group_name":"ポリオキシン",
+    "made_of_action":"Ｈ：細胞壁生合成 - キチン生合成酵素",
+    "examples":"リオキシン",
+    "remarks":"中"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":40,
+    "group_name":"CAA殺菌剤(カルボン酸アミド)",
+    "made_of_action":"Ｈ：細胞壁生合成 - セルロース生合成酵素",
+    "examples":"ジメトモルフ",
+    "remarks":"低～中\/欧州においてﾌﾞﾄﾞｳべと病の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":40,
+    "group_name":"CAA殺菌剤(カルボン酸アミド)",
+    "made_of_action":"Ｈ：細胞壁生合成 - セルロース生合成酵素",
+    "examples":"ベンチアバリカルブイソプロピル",
+    "remarks":"低～中\/欧州においてﾌﾞﾄﾞｳべと病の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":40,
+    "group_name":"CAA殺菌剤(カルボン酸アミド)",
+    "made_of_action":"Ｈ：細胞壁生合成 - セルロース生合成酵素",
+    "examples":"マンジプロパミド",
+    "remarks":"低～中\/欧州においてﾌﾞﾄﾞｳべと病の耐性菌が発生。ｸﾞﾙｰﾌﾟ内で交差耐性がある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":16.1,
+    "group_name":"MBI-R",
+    "made_of_action":"Ｉ：細胞壁のメラニン生合成 - メラニン生合成の還元酵素",
+    "examples":"フサライド",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":16.1,
+    "group_name":"MBI-R",
+    "made_of_action":"Ｉ：細胞壁のメラニン生合成 - メラニン生合成の還元酵素",
+    "examples":"フサライド",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":16.1,
+    "group_name":"MBI-R",
+    "made_of_action":"Ｉ：細胞壁のメラニン生合成 - メラニン生合成の還元酵素",
+    "examples":"フサライド",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":16.3,
+    "group_name":"MBI-P",
+    "made_of_action":"Ｉ：細胞壁のメラニン生合成 - メラニン生合成のポリケタイド合成酵素",
+    "examples":"トルプロカルブ",
+    "remarks":"耐性菌未発生。細菌と糸状菌に対する宿主植物の抵抗性誘導活性もある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"P1",
+    "group_name":"ベンゾチアジアゾール(BTH)",
+    "made_of_action":"Ｐ：宿主植物の抵抗性誘導 - サリチル酸シグナル伝達",
+    "examples":"アシベンゾラルS-メチル",
+    "remarks":"耐性菌未発生"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"P2",
+    "group_name":"ベンゾイソチアゾール",
+    "made_of_action":"Ｐ：宿主植物の抵抗性誘導 - サリチル酸シグナル伝達",
+    "examples":"プロベナゾール ",
+    "remarks":"耐性菌未発生"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"P3",
+    "group_name":"チアジアゾールカルボキサミド",
+    "made_of_action":"Ｐ：宿主植物の抵抗性誘導 - サリチル酸シグナル伝達",
+    "examples":"チアジニル",
+    "remarks":"耐性菌未発生"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"P3",
+    "group_name":"イソチアゾールカルボキサミド",
+    "made_of_action":"Ｐ：宿主植物の抵抗性誘導 - サリチル酸シグナル伝達",
+    "examples":"イソチアニル",
+    "remarks":"耐性菌未発生"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"P7",
+    "group_name":"ホスホナート",
+    "made_of_action":"Ｐ：宿主植物の抵抗性誘導 - ホスホナート",
+    "examples":"ホセチル",
+    "remarks":"低\/耐性菌報告事例がわずかにある。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"P8",
+    "group_name":"イソチアゾール",
+    "made_of_action":"Ｐ：宿主植物の抵抗性誘導 - サリチル酸シグナル伝達",
+    "examples":"ジクロベンチアゾクス",
+    "remarks":"サリチル酸経路のサリチル酸の上流と下流を活性化する。耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":27,
+    "group_name":"シアノアセトアミド=オキシム",
+    "made_of_action":"Ｕ：作用機構不明 - 不明",
+    "examples":"シモキサニル",
+    "remarks":"低～中"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":36,
+    "group_name":"ベンゼンスルホン酸",
+    "made_of_action":"Ｕ：作用機構不明 - 不明",
+    "examples":"フルスルファミド",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"U6",
+    "group_name":"フェニルアセトアミド",
+    "made_of_action":"Ｕ：作用機構不明 - 不明",
+    "examples":"シフルフェナミド",
+    "remarks":"耐性うどんこ病菌発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"U13",
+    "group_name":"チアゾリジン",
+    "made_of_action":"Ｕ：作用機構不明 - 不明",
+    "examples":"フルチアニル",
+    "remarks":"耐性うどんこ病菌発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"U14",
+    "group_name":"ピリミジノンヒドラゾン",
+    "made_of_action":"Ｕ：作用機構不明 - 不明",
+    "examples":"フェリムゾン",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"U16",
+    "group_name":"4-キノリル酢酸",
+    "made_of_action":"Ｕ：作用機構不明 - 複合体Ⅲ（結合部位不明）",
+    "examples":"テブフロキン",
+    "remarks":"QoIとは交差しない。耐性ﾘｽｸ不明。中と推測。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"U17",
+    "group_name":"テトラゾリルオキシム",
+    "made_of_action":"Ｕ：作用機構不明 - 不明",
+    "examples":"ピカルブトラゾクス",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"U18",
+    "group_name":"グルコピラノシル抗生物質",
+    "made_of_action":"Ｕ：作用機構不明 - 不明（トレハラーゼ阻害）",
+    "examples":"バリダマイシン",
+    "remarks":"耐性菌未発生。ﾄﾚﾊﾛｰｽによる抵抗性誘導提案中。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"NC",
+    "group_name":"種々",
+    "made_of_action":"未分類 - 不明",
+    "examples":"炭酸水素カリウム",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"NC",
+    "group_name":"種々",
+    "made_of_action":"未分類 - 不明",
+    "examples":"炭酸水素ナトリウム",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"NC",
+    "group_name":"種々",
+    "made_of_action":"未分類 - 不明",
+    "examples":"天然物起源",
+    "remarks":"耐性菌未発生。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M1",
+    "group_name":"無機化合物（求電子剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"銅",
+    "remarks":"有機銅にも適用。全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M2",
+    "group_name":"無機化合物（求電子剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"硫黄",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M3",
+    "group_name":"ジチオカーバメート（求電子剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"マンゼブ",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M3",
+    "group_name":"ジチオカーバメート（求電子剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"マンネブ",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M3",
+    "group_name":"ジチオカーバメート（求電子剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"プロピネブ",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M3",
+    "group_name":"ジチオカーバメート（求電子剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"チラウム",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M3",
+    "group_name":"ジチオカーバメート（求電子剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"ジラム",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M4",
+    "group_name":"フタルイミド（求電子剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"キャプタン",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M5",
+    "group_name":"クロロトリル（フタロニトリル）（作用点不明）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"TPN",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M7",
+    "group_name":"ビスグアニジン（細胞膜攪乱剤、界面活性剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"イミノクタジン酢酸塩",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M7",
+    "group_name":"ビスグアニジン（細胞膜攪乱剤、界面活性剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"イミノクタジンアルベシル酸塩",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M9",
+    "group_name":"キノン(アントラキノン)（求電子剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"ジチアノン",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M10",
+    "group_name":"キノキサリン（求電子剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"キノキサリン系",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  },
+  {
+    "rac_type":"FRAC",
+    "rac_code":"M11",
+    "group_name":"マレイミド（求電子剤）",
+    "made_of_action":"Ｍ：多作用点接触活性化合物 - 多作用点接触活性",
+    "examples":"フルオルイミド",
+    "remarks":"全般的に低ﾘｽｸとみなしている。"
+  }
+]

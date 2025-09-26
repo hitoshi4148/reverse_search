@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>農薬検索システム</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 18px; }
+    .section-title { margin-top: 24px; margin-bottom: 12px; }
+    #detail .card { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+
+  <style>
+    .particle {
+      position: absolute;
+      font-size: 24px;
+      pointer-events: none;
+      animation: floatUp 3000ms ease-out forwards; /* ← 5秒に延長 */
+    }
+  
+    @keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translate(var(--x), calc(var(--y) * 0.7)) scale(1.1); /* 少し大きく膨らむ */
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(0.8); /* 少し縮んで消える */
+  }
+}
+  </style>
+  
+  <script>
+  function spawnParticles(button, type) {
+    const rect = button.getBoundingClientRect();
+    const icons = {
+      FRAC: "🦠",
+      IRAC: "🐛",
+      HRAC: "🌱"
+    };
+  
+    for (let i = 0; i < 5; i++) {
+      const span = document.createElement("span");
+      span.className = "particle";
+      span.textContent = icons[type] || "✨";
+  
+      // ボタンの中心から出す
+      span.style.left = rect.left + rect.width / 2 + window.scrollX + "px";
+      span.style.top = rect.top + rect.height / 2 + window.scrollY + "px";
+
+      // 左右ランダム ±40px、上方向 100〜200px
+      const x = (Math.random() - 0.5) * 80;
+      const y = - (100 + Math.random() * 100);
+
+      span.style.setProperty("--x", `${x}px`);
+      span.style.setProperty("--y", `${y}px`);
+
+      document.body.appendChild(span);
+
+      // アニメーション終了後に削除
+      span.addEventListener("animationend", () => {
+        span.remove();
+      });
+  }
+}
+      
+
+  
+  // RACボタンに適用
+  document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("rac-btn")) {
+      const type = e.target.dataset.type;
+      spawnParticles(e.target, type);
+    }
+  });
+  </script>
+
+
+  <div class="container">
+    <h1 class="mb-2">らくらく農薬検索</h1>
+    <div class="text-muted" style="margin-bottom:2px; line-height:1.2; font-size:1.1em;">
+      グリーンキーパーのための殺菌剤FRAC/殺虫剤IRAC/除草剤HRAC耐性情報提供システム
+    </div>
+    <div style="margin-bottom:28px; line-height:1;"><span style="font-size:1em;">v0.9 2025/9/26</span></div>
+
+
+    <div class="input-group mb-3">
+      <input type="text" id="keyword" class="form-control" placeholder="農薬名を入力（例: ダコニール）">
+      <button class="btn btn-primary" id="searchBtn">検索</button>
+    </div>
+
+    <h3 class="section-title">検索結果</h3>
+    <div id="results">検索して下さい</div>
+
+    <h3 class="section-title">農薬詳細</h3>
+    <div id="detail"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-5 py-3">
+    <div class="container">
+      <p class="mb-1">©2025 Growth and Progress</p>
+      <p class="mb-0">
+        <a href="https://www.turf-tools.jp/" target="_blank" class="text-decoration-none">グロウアンドプログレス</a>
+      </p>
+    </div>
+  </footer>
+
+<script>
+/*
+  重要: この index.html は search_server.js（現在アップされているもの）の
+  返却キー（用途_x, 農薬の名称_x, 正式名称）とクエリ名(regNo)に合わせてあります。
+*/
+
+let currentDetail = null;
+
+// 検索ボタンと Enter にバインド
+document.getElementById("searchBtn").addEventListener("click", doSearch);
+document.getElementById("keyword").addEventListener("keydown", (e) => { if (e.key === "Enter") doSearch(); });
+
+// --- 検索 ---
+async function doSearch() {
+  const keyword = document.getElementById("keyword").value.trim();
+  if (!keyword) return;
+  console.log("🔎 検索ワード:", keyword);
+
+  try {
+    const res = await fetch(`/search?keyword=${encodeURIComponent(keyword)}`);
+    const data = await res.json();
+    console.log("🔎 /search result:", data);
+
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = "";
+
+    if (!Array.isArray(data) || data.length === 0) {
+      resultsDiv.innerHTML = "<div class='alert alert-warning'>該当する農薬は見つかりませんでした。</div>";
+      document.getElementById("detail").innerHTML = "";
+      return;
+    }
+
+    // サーバーは { 登録番号, 用途_x, 農薬の名称_x, 正式名称 } を返します（このキーで参照）
+    let html = `<table class="table table-striped table-hover"><thead><tr>
+      <th>登録番号</th><th>用途</th><th>農薬の名称</th><th>メーカー</th><th></th>
+    </tr></thead><tbody>`;
+
+    data.forEach(row => {
+      html += `<tr>
+        <td>${row["登録番号"] ?? "－"}</td>
+        <td>${row["用途_x"] ?? "－"}</td>
+        <td>${row["農薬の名称_x"] ?? "－"}</td>
+        <td>${row["正式名称"] ?? "－"}</td>
+        <td><button class="btn btn-sm btn-primary" onclick="loadDetail(${JSON.stringify(row["登録番号"])})">選択</button></td>
+      </tr>`;
+    });
+
+    html += "</tbody></table>";
+    resultsDiv.innerHTML = html;
+    document.getElementById("detail").innerHTML = "";
+
+  } catch (err) {
+    console.error("検索エラー:", err);
+    alert("検索でエラーが発生しました（コンソール参照）。");
+  }
+}
+
+// --- 詳細をロード (サーバー側は regNo を期待）---
+async function loadDetail(regNo) {
+  console.log("📡 /detail 呼び出し regNo=", regNo);
+  try {
+    const res = await fetch(`/detail?regNo=${encodeURIComponent(regNo)}`);
+    const data = await res.json();
+    console.log("📥 /detail data:", data);
+    // data は { detail: [...], racList: [...] }
+    if (!data || !data.detail) {
+      alert("詳細データが不正です（コンソールを確認）。");
+      return;
+    }
+    currentDetail = data;
+    renderDetail(data);
+  } catch (err) {
+    console.error("detail 取得エラー:", err);
+    alert("詳細取得でエラーが発生しました（コンソール参照）。");
+  }
+}
+
+// --- 詳細表示（基本情報 + ボタン群 + subview） ---
+function renderDetail(data) {
+  const detailDiv = document.getElementById("detail");
+  detailDiv.innerHTML = "";
+
+  const basic = data.detail[0] || {};
+  // 基本情報カード
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `<div class="card-body">
+    <h5 class="card-title">${basic["農薬の名称_x"] ?? "－"}</h5>
+    <p class="card-text">登録番号: ${basic["登録番号"] ?? "－"}<br>
+    用途: ${basic["用途_x"] ?? "－"}<br>
+    メーカー: ${basic["正式名称"] ?? "－"}</p>
+  </div>`;
+  detailDiv.appendChild(card);
+
+  // ボタン群（適用情報 + RACコードボタン）
+  const btnGroup = document.createElement("div");
+  btnGroup.className = "btn-group my-2";
+  // 適用情報ボタン
+  const applyBtn = document.createElement("button");
+  applyBtn.className = "btn btn-outline-success active";
+  applyBtn.innerText = "適用情報";
+  applyBtn.onclick = () => { showUsageInfo(); setActiveBtn(applyBtn); };
+  btnGroup.appendChild(applyBtn);
+
+  // RACボタン（server が返す racList に基づく）
+  (data.racList || []).forEach((r, idx) => {
+    const b = document.createElement("button");
+    b.className = "btn btn-outline-primary rac-btn";
+    b.dataset.type = r.rac_type; // FRAC / IRAC / HRAC
+    b.textContent = `[${r.rac_type} ${r.rac_code}]`;
+    b.innerText = `[${r.rac_type}-${r.rac_code}]`;
+    b.onclick = () => { showRacInfo(r.rac_type, r.rac_code); setActiveBtn(b); };
+    btnGroup.appendChild(b);
+  });
+
+  // no RAC の場合は disabled 表示
+  if (!Array.isArray(data.racList) || data.racList.length === 0) {
+    const n = document.createElement("button");
+    n.className = "btn btn-outline-secondary disabled";
+    n.innerText = "RACなし";
+    btnGroup.appendChild(n);
+  }
+
+  detailDiv.appendChild(btnGroup);
+
+  // subview を作る（ここに適用情報 or RAC情報が入る）
+  const subview = document.createElement("div");
+  subview.id = "subview";
+  detailDiv.appendChild(subview);
+
+  // 初期は適用情報表示
+  showUsageInfo();
+}
+
+// ボタンのアクティブ切り替え
+function setActiveBtn(btn) {
+  const parent = btn.parentNode;
+  if (!parent) return;
+  Array.from(parent.querySelectorAll("button")).forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+}
+
+// --- 適用情報を subview に出力 ---
+function showUsageInfo() {
+  const sub = document.getElementById("subview");
+  if (!currentDetail || !currentDetail.detail) { sub.innerHTML = "<div class='alert alert-warning'>適用情報がありません。</div>"; return; }
+
+  const rows = currentDetail.detail;
+  let html = `<h5>適用情報</h5>
+    <table class="table table-bordered table-sm"><thead><tr>
+      <th>作物名</th><th>適用場所</th><th>適用病害虫雑草名</th>
+      <th>有効成分</th><th>濃度</th><th>希釈倍率使用量</th><th>散布液量</th>
+      <th>使用時期</th><th>総使用回数</th><th>使用方法</th>
+    </tr></thead><tbody>`;
+
+  rows.forEach(r => {
+    html += `<tr>
+      <td>${r["作物名"] ?? "－"}</td>
+      <td>${r["適用場所"] ?? "－"}</td>
+      <td>${r["適用病害虫雑草名"] ?? "－"}</td>
+      <td>${r["有効成分"] ?? "－"}</td>
+      <td>${r["濃度"] ?? "－"}</td>
+      <td>${r["希釈倍数使用量"] ?? "－"}</td>
+      <td>${r["散布液量"] ?? "－"}</td>
+      <td>${r["使用時期"] ?? "－"}</td>
+      <td>${r["有効成分①を含む農薬の総使用回数"] ?? r["総使用回数"] ?? "－"}</td>
+      <td>${r["使用方法"] ?? "－"}</td>
+    </tr>`;
+  });
+
+  html += `</tbody></table>`;
+  sub.innerHTML = html;
+}
+
+// --- RAC情報と同一グループ農薬 ---
+async function showRacInfo(type, code) {
+  const sub = document.getElementById("subview");
+  sub.innerHTML = "<div class='text-muted'>読み込み中...</div>";
+
+  try {
+    const res = await fetch(`/racgroup?type=${encodeURIComponent(type)}&code=${encodeURIComponent(code)}`);
+    const group = await res.json();
+
+    // RAC詳細表（currentDetail.racList から該当項目を取り出す）
+    const racDetail = (currentDetail.racList || []).find(r => String(r.rac_type) === String(type) && String(r.rac_code) === String(code));
+
+    let html = `<h5>RAC情報</h5>`;
+    html += `<table class="table table-bordered table-sm"><thead><tr>
+      <th>RACタイプ</th><th>RACコード</th><th>グループ名</th><th>作用機構</th><th>成分名</th>
+    </tr></thead><tbody>`;
+
+    if (racDetail) {
+      html += `<tr>
+        <td>${racDetail.rac_type}</td>
+        <td>${racDetail.rac_code}</td>
+        <td>${racDetail.group_name}</td>
+        <td>${racDetail.made_of_action}</td>
+        <td>${racDetail.examples}</td>
+      </tr>`;
+    } else {
+      html += `<tr><td colspan="5">RAC情報が見つかりません</td></tr>`;
+    }
+    html += `</tbody></table>`;
+
+    // 同一グループ農薬一覧
+    html += `<h6 class="mt-3">同一グループ農薬</h6>`;
+    if (!Array.isArray(group) || group.length === 0) {
+      html += `<div class="alert alert-secondary">同一グループの農薬は見つかりません。</div>`;
+    } else {
+      html += `<table class="table table-sm table-striped"><thead><tr><th>登録番号</th><th>農薬の名称</th><th>メーカー</th></tr></thead><tbody>`;
+      group.forEach(e => {
+        html += `<tr>
+          <td>${e["登録番号"] ?? "－"}</td>
+          <td>${e["農薬の名称_x"] ?? "－"}</td>
+          <td>${e["正式名称"] ?? "－"}</td>
+        </tr>`;
+      });
+      html += `</tbody></table>`;
+    }
+
+    sub.innerHTML = html;
+
+  } catch (err) {
+    console.error("racgroup 取得エラー:", err);
+    sub.innerHTML = "<div class='alert alert-danger'>RAC情報の取得に失敗しました。</div>";
+  }
+}
+</script>
+</body>
+</html>

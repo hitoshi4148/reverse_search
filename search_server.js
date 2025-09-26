@@ -1,13 +1,16 @@
-// search_server.js (置き換え用)
-// Node.js (CommonJS) - implements /search, /detail and /racgroup
+// search_server.js
 const http = require("http");
+const https = require("https");
 const fs = require("fs");
 const url = require("url");
 const path = require("path");
 
 const JSON_URL = "https://drive.google.com/uc?export=download&id=1gjHGITcq7RwDgUVNbmFQf6smo5MgOILQ";
-let pesticideList = [];
 
+let pesticideList = [];
+let pesticideData = {};
+
+// --- Google Drive から pesticides.json を取得 ---
 function downloadJSON(callback) {
   console.log("📥 Downloading pesticides.json...");
   https.get(JSON_URL, res => {
@@ -18,6 +21,16 @@ function downloadJSON(callback) {
         fs.writeFileSync("pesticides.json", data, "utf8");
         pesticideList = JSON.parse(data);
         console.log("✅ pesticides.json loaded. Count:", pesticideList.length);
+
+        // pesticide_data.json をローカルから読む
+        try {
+          pesticideData = JSON.parse(fs.readFileSync("pesticide_data.json", "utf8"));
+          console.log("✅ pesticide_data.json loaded.");
+        } catch (e) {
+          console.error("❌ pesticide_data.json の読み込みに失敗:", e.message);
+          process.exit(1);
+        }
+
         callback();
       } catch (err) {
         console.error("❌ Failed to load pesticides.json:", err);
@@ -28,61 +41,159 @@ function downloadJSON(callback) {
   });
 }
 
-// ダウンロードが完了してからサーバー起動
-downloadJSON(() => {
-  const http = require("http");
-  const url = require("url");
-
-  const server = http.createServer((req, res) => {
-    const parsedUrl = url.parse(req.url, true);
-    const pathname = parsedUrl.pathname;
-
-    if (pathname === "/search") {
-      const keyword = (parsedUrl.query.keyword || "").toLowerCase();
-      const matched = pesticideList.filter(entry =>
-        String(entry["農薬の名称_x"]).toLowerCase().includes(keyword)
-      );
-      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-      res.end(JSON.stringify(matched));
-      return;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// --- データ読み込み ---
-let pesticideList, pesticideData;
-try {
-  pesticideList = JSON.parse(fs.readFileSync("pesticides.json", "utf8"));
-} catch (e) {
-  console.error("pesticides.json の読み込みに失敗しました:", e.message);
-  process.exit(1);
-}
-try {
-  pesticideData = JSON.parse(fs.readFileSync("pesticide_data.json", "utf8"));
-} catch (e) {
-  console.error("pesticide_data.json の読み込みに失敗しました:", e.message);
-  process.exit(1);
-}
-
-// 文字列正規化（全角半角・大/小・余白を吸収）
+// --- 文字列正規化 ---
 function normalize(str) {
   if (!str && str !== 0) return "";
   return String(str).normalize("NFKC").toLowerCase().trim();
 }
+
+// --- サーバー起動 ---
+downloadJSON(() => {
+  const server = http.createServer((req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    const parsedUrl = url.parse(req.url, true);
+    const pathname = parsedUrl.pathname;
+
+    // /search
+    if (pathname === "/search") {
+      const keyword = normalize(parsedUrl.query.keyword || "");
+      const keywords = keyword.split(/\s+/).filter(Boolean);
+      const matched = pesticideList.filter(entry =>
+        keywords.every(kw => normalize(entry["農薬の名称_x"]).includes(kw))
+      );
+      const unique = [];
+      const seen = new Set();
+      matched.forEach(e => {
+        if (!seen.has(e["登録番号"])) {
+          seen.add(e["登録番号"]);
+          unique.push({
+            "登録番号": e["登録番号"],
+            "用途_x": e["用途_x"],
+            "農薬の名称_x": e["農薬の名称_x"],
+            "正式名称": e["正式名称"]
+          });
+        }
+      });
+      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify(unique));
+      return;
+    }
+
+    // /detail
+    if (pathname === "/detail") {
+      const reg = parsedUrl.query.regNo || parsedUrl.query.reg;
+      if (!reg) {
+        res.writeHead(400, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ error: "regNo（または reg）が必要です" }));
+        return;
+      }
+      const detailRows = pesticideList.filter(e => String(e["登録番号"]) === String(reg));
+      if (detailRows.length === 0) {
+        res.writeHead(404, { "Content-Type": "application/json; charset=utf-8" });
+        res.end(JSON.stringify({ error: "not found" }));
+        return;
+      }
+
+      const racList = [];
+      detailRows.forEach(row => {
+        for (let i = 1; i <= 5; i++) {
+          const key = (i === 1) ? "有効成分" : `有効成分${i}`;
+          const comp = row[key] || "";
+          if (!comp) continue;
+          const nc = normalize(comp);
+          for (const typeKey of ["frac", "irac", "hrac"]) {
+            (pesticideData[typeKey] || []).forEach(r => {
+              const ex = normalize(r.examples || "");
+              if (ex && (nc.includes(ex) || ex.includes(nc))) {
+                const keyId = `${r.rac_type}-${r.rac_code}`;
+                if (!racList.find(x => x.key === keyId)) {
+                  racList.push({ key: keyId, ...r });
+                }
+              }
+            });
+          }
+        }
+      });
+
+      const detail = detailRows.map(row => ({
+        登録番号: row["登録番号"],
+        用途_x: row["用途_x"],
+        農薬の名称_x: row["農薬の名称_x"],
+        正式名称: row["正式名称"],
+        作物名: row["作物名"] || "－",
+        適用病害虫雑草名: row["適用病害虫雑草名"] || "－",
+        有効成分: row["有効成分"] || "－",
+        濃度: row["濃度"] || "－",
+        希釈倍数使用量: row["希釈倍数使用量"] || "－",
+        散布液量: row["散布液量"] || "－",
+        使用時期: row["使用時期"] || "－",
+        総使用回数: row["有効成分①を含む農薬の総使用回数"] || row["総使用回数"] || "－",
+        使用方法: row["使用方法"] || "－"
+      }));
+
+      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify({ detail, racList }));
+      return;
+    }
+
+    // /racgroup
+    if (pathname === "/racgroup") {
+      const type = parsedUrl.query.type;
+      const code = parsedUrl.query.code;
+      const arr = pesticideData[type.toLowerCase()] || [];
+      const groupEntries = arr.filter(r => r.rac_type === type && r.rac_code === code);
+      const sameGroup = [];
+      groupEntries.forEach(r => {
+        const example = normalize(r.examples || "");
+        if (!example) return;
+        pesticideList.forEach(p => {
+          for (let i = 1; i <= 5; i++) {
+            const k = (i === 1) ? "有効成分" : `有効成分${i}`;
+            const val = p[k];
+            if (!val) continue;
+            const nval = normalize(val);
+            if (nval.includes(example) || example.includes(nval)) {
+              sameGroup.push({
+                登録番号: p["登録番号"],
+                農薬の名称_x: p["農薬の名称_x"],
+                正式名称: p["正式名称"]
+              });
+              break;
+            }
+          }
+        });
+      });
+      const uniq = {};
+      sameGroup.forEach(e => { uniq[e["登録番号"]] = e; });
+      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      res.end(JSON.stringify(Object.values(uniq)));
+      return;
+    }
+
+    // index.html
+    if (pathname === "/" || pathname === "/index.html") {
+      fs.readFile(path.join(__dirname, "index.html"), (err, data) => {
+        if (err) { res.writeHead(500); res.end("Error loading index.html"); return; }
+        res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+        res.end(data);
+      });
+      return;
+    }
+
+    res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+    res.end("Not Found");
+  });
+
+  server.listen(3000, () => {
+    console.log("✅ サーバー起動: http://localhost:3000");
+  });
+});
+
+
+
+
+
+
 
 const server = http.createServer((req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

@@ -1,6 +1,8 @@
 // search_server.js
-const http = require("http");
-const https = require("https");
+// const http = require("http");
+// const https = require("https");
+
+const { http, https } = require("follow-redirects");
 const fs = require("fs");
 const url = require("url");
 const path = require("path");

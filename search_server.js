@@ -6,7 +6,7 @@ const url = require("url");
 const path = require("path");
 
 // const JSON_URL = "https://drive.google.com/uc?export=download&id=1gjHGITcq7RwDgUVNbmFQf6smo5MgOILQ";
-const JSON_URL = "https://www.dropbox.com/scl/fi/ips7mw0rrecjas9i2aqo9/pesticides.json?rlkey=ypxxnr7wvsy78owklcej1mvtq&st=20ib9m0u&dl=0"
+const JSON_URL = "https://www.dropbox.com/scl/fi/ips7mw0rrecjas9i2aqo9/pesticides.json?rlkey=ypxxnr7wvsy78owklcej1mvtq&st=20ib9m0u&dl=1"
 
 let pesticideList = [];
 let pesticideData = {};

@@ -131,7 +131,7 @@ function createServer() {
     const parsed = url.parse(req.url, true);
     const pathname = parsed.pathname;
 
-    // --- /search ?keyword=... ---
+    // --- /search ?keyword=... (逆検索：病害・害虫・雑草名から農薬を検索) ---
     if (pathname === "/search") {
       const rawKeyword = parsed.query.keyword || "";
       const keyword = normalize(rawKeyword);
@@ -143,15 +143,10 @@ function createServer() {
       const keywords = keyword.split(/\s+/).filter(Boolean);
 
       const matched = pesticideList.filter(entry => {
-        const name = normalize(entry["農薬の名称_x"] || entry["農薬の名称"] || "");
-        const maker = normalize(entry["正式名称"] || "");
-        const type = normalize(entry["農薬の種類_x"] || entry["農薬の種類"] || "");
-        // すべてのキーワードについてどれかのフィールドに含まれていること
-        return keywords.every(kw =>
-          (name && name.includes(kw)) ||
-          (maker && maker.includes(kw)) ||
-          (type && type.includes(kw))
-        );
+        // 適用病害虫雑草名で検索
+        const targetName = normalize(entry["適用病害虫雑草名"] || "");
+        // 部分一致検索（あいまい検索）
+        return keywords.some(kw => targetName.includes(kw));
       });
 
       // 登録番号でユニーク化（表示は1行）
@@ -165,12 +160,13 @@ function createServer() {
             登録番号: reg,
             用途_x: e["用途_x"] || "－",
             農薬の名称_x: e["農薬の名称_x"] || "－",
-            正式名称: e["正式名称"] || "－"
+            正式名称: e["正式名称"] || "－",
+            適用病害虫雑草名: e["適用病害虫雑草名"] || "－"
           });
         }
       });
 
-      console.log("検索ワード:", rawKeyword, "ヒット:", unique.length);
+      console.log("逆検索ワード:", rawKeyword, "ヒット:", unique.length);
       res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
       res.end(JSON.stringify(unique));
       return;

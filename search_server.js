@@ -84,7 +84,8 @@ function findRacByComponents(components) {
               rac_code: r.rac_code,
               group_name: r.group_name,
               made_of_action: r.made_of_action,
-              examples: r.examples
+              examples: r.examples,
+              remarks: r.remarks
             });
           }
         }

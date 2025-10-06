@@ -87,7 +87,7 @@
     <div class="text-muted" style="margin-bottom:2px; line-height:1.2; font-size:1.1em;">
       グリーンキーパーのための殺菌剤FRAC/殺虫剤IRAC/除草剤HRAC耐性情報提供システム
     </div>
-    <div style="margin-bottom:28px; line-height:1;"><span style="font-size:1em;">v0.9 2025/9/26</span></div>
+    <div style="margin-bottom:28px; line-height:1;"><span style="font-size:1em;">v0.91 2025/10/6</span></div>
 
 
     <div class="input-group mb-3">
@@ -300,7 +300,7 @@ async function showRacInfo(type, code) {
 
     let html = `<h5>RAC情報</h5>`;
     html += `<table class="table table-bordered table-sm"><thead><tr>
-      <th>RACタイプ</th><th>RACコード</th><th>グループ名</th><th>作用機構</th><th>成分名</th>
+      <th>RACタイプ</th><th>RACコード</th><th>グループ名</th><th>作用機構</th><th>成分名</th><th>備考</th>
     </tr></thead><tbody>`;
 
     if (racDetail) {
@@ -310,9 +310,10 @@ async function showRacInfo(type, code) {
         <td>${racDetail.group_name}</td>
         <td>${racDetail.made_of_action}</td>
         <td>${racDetail.examples}</td>
+        <td>${racDetail.remarks || "－"}</td>
       </tr>`;
     } else {
-      html += `<tr><td colspan="5">RAC情報が見つかりません</td></tr>`;
+      html += `<tr><td colspan="6">RAC情報が見つかりません</td></tr>`;
     }
     html += `</tbody></table>`;
 
